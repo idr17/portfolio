@@ -36,7 +36,7 @@
       >
         <q-item>
           <q-item-main style="text-align: center;">
-            <q-item-tile style="display: block;"><img alt="Quasar logo" src="~assets/rsz_me_and_my_lovely.jpg" style="border-radius: 100px; height: 150px;"></q-item-tile>
+            <q-item-tile style="display: block;"><img alt="Quasar logo" src="~assets/charlie-chaplin.jpeg" style="border-radius: 100px; height: 150px;"></q-item-tile>
             <q-item-tile style="display: block; font-weight: bold;">{{ creator.username }}</q-item-tile>
             <q-item-tile style="display: block;">{{ creator.progies }}</q-item-tile>
           </q-item-main>
@@ -95,8 +95,8 @@ export default {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
       creator: {
-        username: 'Indro Allezz',
-        nickname: 'Indro',
+        username: 'Johny Doe',
+        nickname: 'John',
         email: 'indera.allezz@gmail.com',
         github: 'idr17',
         phone: '081296171727',

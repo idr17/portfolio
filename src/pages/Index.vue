@@ -142,8 +142,7 @@
       <!-- <q-list-header>About</q-list-header> -->
       <q-item>
         <q-item-main>
-          {{ content.aboutPage }}<br>
-          Semoga saya tidak salah =))
+          {{ content.aboutPage }}
         </q-item-main>
       </q-item>
       <q-list-header>
@@ -183,15 +182,15 @@ export default {
   data () {
     return {
       content: {
-        aboutPage: 'Hi, saya biasa dipanggil indro. Saya suka belajar & fastlearner yang terobsesi dengan software development.',
+        aboutPage: 'Hi, my name is John. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         basicInfo: {
-          name: 'Indra Kurneamin',
-          age: '29 Years Old',
+          name: 'Johny Doe',
+          age: '25 Years Old',
           hobby: 'Coding, Football, Coffee'
         },
         education: {
-          diploma: 'Manajemen Informatika - Politeknik Negeri Malang',
-          bachelor: 'Fasilkom - Universitas Mercubuana'
+          // diploma: 'Manajemen Informatika - Politeknik Negeri Malang',
+          bachelor: 'Harvard University'
         },
         project: {
           one: 4,

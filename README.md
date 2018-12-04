@@ -1,4 +1,5 @@
-# Quasar App
-
-> WIP
 # portfolio
+
+> yarn install
+
+> quasar dev

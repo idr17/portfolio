@@ -36,7 +36,7 @@
       >
         <q-item>
           <q-item-main style="text-align: center;">
-            <q-item-tile style="display: block;"><img alt="Quasar logo" src="~assets/charlie-chaplin.jpeg" style="border-radius: 100px; height: 150px;"></q-item-tile>
+            <q-item-tile style="display: block;"><img alt="Quasar logo" src="~assets/rsz_me_and_my_lovely.jpg" style="border-radius: 100px; height: 150px;"></q-item-tile>
             <q-item-tile style="display: block; font-weight: bold;">{{ creator.username }}</q-item-tile>
             <q-item-tile style="display: block;">{{ creator.progies }}</q-item-tile>
           </q-item-main>
@@ -79,7 +79,9 @@
         </q-btn>
         <q-toolbar-title>
           <p class="q-caption q-ma-none">By: {{ creator.nickname }}</p>
-          <div slot="subtitle">call us @{{ creator.phone }} | @github:{{ creator.github }} | @email:{{ creator.email }}</div>
+          <div slot="subtitle">call us @{{ creator.phone }} |
+            <span @click="openURL(`https://github.com/${creator.github}`)" class="externalSrc">@github:{{ creator.github }}</span> |
+            <span @click="openURL(`mailto:${creator.email}`)" class="externalSrc">@email:{{ creator.email }}</span></div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-footer>
@@ -95,8 +97,8 @@ export default {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
       creator: {
-        username: 'Johny Doe',
-        nickname: 'John',
+        username: 'Indra Kurneamin',
+        nickname: 'Indro',
         email: 'indera.allezz@gmail.com',
         github: 'idr17',
         phone: '081296171727',
@@ -111,9 +113,6 @@ export default {
 </script>
 
 <style scoped>
-/* .parentListMenu { border: solid 1px red !important; } */
-/* .parentListMenu { color: #fff !important; background-image: url('../assets/blue-hexagon.jpeg') !important; background-repeat: repeat-y !important; } */
-/* .listMenu { color: #fff; background-image: url('~assets/blue-hexagon.jpeg'); background-repeat: repeat-y; } */
-/* .q-item-sublabel { color: #fff !important; } */
 a.links { text-decoration: none; margin-left: 40px; color: #333; }
+span.externalSrc { color: chartreuse; cursor: pointer; }
 </style>

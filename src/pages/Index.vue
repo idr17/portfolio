@@ -36,14 +36,10 @@
           </q-timeline>
         </q-item-main>
       </q-item>
+      <q-list-header>
+          Portfolio
+      </q-list-header>
       <q-item id="portfolio">
-        <q-item-main>
-          <q-list-header>
-            Portfolio
-          </q-list-header>
-        </q-item-main>
-      </q-item>
-      <q-item>
         <q-item-main>
           Here is some of them..
         </q-item-main>
@@ -159,13 +155,11 @@
         <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
         <q-item-main>{{ val | capitalize }}</q-item-main>
       </q-item>
-      <q-item>
-        <q-list-header>
-          Technical Skill
-        </q-list-header>
-      </q-item>
+      <q-list-header>
+        Technical Skill
+      </q-list-header>
       <q-item v-for="(v, k) in content.skills" :key="k">
-          {{ k }}
+        <q-item-side class="skilltitle">{{ k }}</q-item-side>
         <q-item-main class="skillbar">
           <q-progress :percentage="v.val" :color="v.color" />
         </q-item-main>
@@ -182,15 +176,15 @@ export default {
   data () {
     return {
       content: {
-        aboutPage: 'Hi, my name is John. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        aboutPage: 'Hi, saya biasa dipanggil indro. Saya suka belajar & fastlearner yang terobsesi dengan software development.',
         basicInfo: {
-          name: 'Johny Doe',
-          age: '25 Years Old',
+          name: 'Indra Kurneamin',
+          age: '29 Years Old',
           hobby: 'Coding, Football, Coffee'
         },
         education: {
-          // diploma: 'Manajemen Informatika - Politeknik Negeri Malang',
-          bachelor: 'Harvard University'
+          diploma: 'Manajemen Informatika - Politeknik Negeri Malang',
+          bachelor: 'Fasilkom - Universitas Mercubuana'
         },
         project: {
           one: 4,
@@ -198,13 +192,14 @@ export default {
           three: 5
         },
         skills: {
-          PHP_CodeIgniter: { val: 80, color: 'primary' },
+          NodeJs_FeathersJs: { val: 75, color: 'info' },
+          VueJs: { val: 75, color: 'green' },
+          Quasar_Framework: { val: 75, color: 'warning' },
+          AngularJs: { val: 85, color: 'blue' },
+          ReactJs: { val: 50, color: 'green' },
+          CodeIgniter: { val: 80, color: 'primary' },
           YII: { val: 50, color: 'yellow' },
           CSS: { val: 70, color: 'secondary' },
-          Node_FeathersJs: { val: 75, color: 'info' },
-          VueJs: { val: 75, color: 'green' },
-          QuasarFW: { val: 75, color: 'warning' },
-          AngularJs: { val: 85, color: 'warning' },
           GIT: { val: 75, color: 'red' }
         }
       }
@@ -226,5 +221,6 @@ export default {
 .careerContent { padding: 0 30px; }
 .q-list-header { font-size: 30px; margin: 30px 0 20px 0;  }
 .skillbar { margin-left: 10px; }
+.skilltitle { width: 150px; }
 .cardProject { width: 290px; margin: 0 10px 0 0; }
 </style>

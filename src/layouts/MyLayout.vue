@@ -102,7 +102,7 @@ export default {
         email: 'indera.allezz@gmail.com',
         github: 'idr17',
         phone: '081296171727',
-        progies: 'Fullstack Web Developer'
+        progies: 'Software Engineer'
       }
     }
   },

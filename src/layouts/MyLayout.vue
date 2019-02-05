@@ -114,5 +114,5 @@ export default {
 
 <style scoped>
 a.links { text-decoration: none; margin-left: 40px; color: #333; }
-span.externalSrc { color: chartreuse; cursor: pointer; }
+span.externalSrc { cursor: pointer; }
 </style>

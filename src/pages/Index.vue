@@ -12,7 +12,7 @@
               side="left"
             >
               <div>
-                Currently developing snaapp (School Notification and Attendance App).
+                MGG is a software company founded by Steven Tan, which headquartered in Singapore. MGG's flagship product is Snaapp, school notification and attendance app. Snaapp widely used at schools in Singapore. I work here as Full Stack Javascript Programmer.
               </div>
             </q-timeline-entry>
             <q-timeline-entry
@@ -142,7 +142,7 @@
         </q-item-main>
       </q-item>
       <q-list-header>
-        Basic Personal Information
+        I am
       </q-list-header>
       <q-item v-for="(val, k) in content.basicInfo" :key="k">
         <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
@@ -222,5 +222,5 @@ export default {
 .q-list-header { font-size: 30px; margin: 30px 0 20px 0;  }
 .skillbar { margin-left: 10px; }
 .skilltitle { width: 150px; }
-.cardProject { width: 290px; margin: 0 10px 0 0; }
+.cardProject { width: 290px; margin: 0 10px 15px 0; }
 </style>

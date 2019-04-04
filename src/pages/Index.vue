@@ -219,7 +219,8 @@ export default {
   },
   methods: {
     downloadCV () {
-      this.openURL('../downloads/indro-cv-march-2019.pdf')
+      // this.openURL('../downloads/indro-cv-march-2019.pdf') // local
+      this.openURL('https://github.com/idr17/portfolio/blob/master/src/downloads/indro-cv-march-2019.pdf')
     }
   }
 }

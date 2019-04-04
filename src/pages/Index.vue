@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page style="position: relative;">
     <q-list class="careerContent" id="workingEksperience">
       <q-list-header>Working Experience</q-list-header>
       <q-item>
@@ -36,10 +36,10 @@
           </q-timeline>
         </q-item-main>
       </q-item>
-      <q-list-header>
+      <q-list-header id="portfolio">
           Portfolio
       </q-list-header>
-      <q-item id="portfolio">
+      <q-item>
         <q-item-main>
           Here is some of them..
         </q-item-main>
@@ -52,7 +52,7 @@
             </q-card-media>
             <q-card-title>
               KapanlagiKeSingapura
-              <q-rating slot="subtitle" v-model="content.project.one" :max="5" />
+              <q-rating slot="subtitle" v-model="content.project.one" :max="5" disable />
               <div slot="right" class="row items-center">
                 <!-- <q-icon name="place" /> 250 ft -->
               </div>
@@ -73,7 +73,7 @@
             </q-card-media>
             <q-card-title>
               #GarnierSuperready
-              <q-rating slot="subtitle" v-model="content.project.two" :max="5" />
+              <q-rating slot="subtitle" v-model="content.project.two" :max="5" disable />
               <div slot="right" class="row items-center">
                 <!-- <q-icon name="place" /> 250 ft -->
               </div>
@@ -94,7 +94,7 @@
             </q-card-media>
             <q-card-title>
               Pixy Asian Beauty
-              <q-rating slot="subtitle" v-model="content.project.three" :max="5" />
+              <q-rating slot="subtitle" v-model="content.project.three" :max="5" disable />
               <div slot="right" class="row items-center">
                 <!-- <q-icon name="place" /> 250 ft -->
               </div>
@@ -115,7 +115,7 @@
             </q-card-media>
             <q-card-title>
               SNAAPP
-              <q-rating slot="subtitle" v-model="content.project.one" :max="5" />
+              <q-rating slot="subtitle" v-model="content.project.one" :max="5" disable />
               <div slot="right" class="row items-center">
                 <!-- <q-icon name="place" /> 250 ft -->
               </div>
@@ -134,26 +134,25 @@
       </q-item>
     </q-list>
     <q-list class="personalContent">
-      <div id="about">
-      <!-- <q-list-header>About</q-list-header> -->
+      <q-list-header id="about">About Us</q-list-header>
       <q-item>
         <q-item-main>
           {{ content.aboutPage }}
         </q-item-main>
       </q-item>
-      <q-list-header>
-        I am
-      </q-list-header>
-      <q-item v-for="(val, k) in content.basicInfo" :key="k">
-        <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
-        <q-item-main>{{ val | capitalize }}</q-item-main>
-      </q-item>
-      <q-list-header>
-        Education
-      </q-list-header>
-      <q-item v-for="(val, k) in content.education" :key="k">
-        <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
-        <q-item-main>{{ val | capitalize }}</q-item-main>
+      <q-item>
+        <q-item-main>
+          <q-item v-for="(val, k) in content.basicInfo" :key="k">
+            <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
+            <q-item-main>{{ val | capitalize }}</q-item-main>
+          </q-item>
+        </q-item-main>
+        <q-item-main>
+          <q-item v-for="(val, k) in content.education" :key="k">
+            <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
+            <q-item-main>{{ val | capitalize }}</q-item-main>
+          </q-item>
+        </q-item-main>
       </q-item>
       <q-list-header>
         Technical Skill
@@ -165,18 +164,23 @@
         </q-item-main>
       </q-item>
       <q-item><q-item-main>&nbsp;</q-item-main></q-item>
-    </div>
     </q-list>
+    <q-page-sticky position="bottom-right" :offset="[18, 30]" style="position: absolute; right: 20px; bottom: 30px;">
+      <q-btn fab color="info" icon="cloud_download" class="animate-pop" @click="downloadCV()"/>
+    </q-page-sticky>
   </q-page>
 </template>
 
 <script>
+
+import { openURL } from 'quasar'
+
 export default {
   name: 'Index',
   data () {
     return {
       content: {
-        aboutPage: 'Hi, saya biasa dipanggil indro. Saya suka belajar & fastlearner yang terobsesi dengan software development.',
+        aboutPage: 'Hi, i am a Software Engineer. My daily work as javascript programmer. Experienced in developing modern SPA web App and Hybrid websites. I am fast learner and loved new things in software development technologies that can solve our problem in better way.',
         basicInfo: {
           name: 'Indra Kurneamin',
           age: '29 Years Old',
@@ -184,7 +188,7 @@ export default {
         },
         education: {
           diploma: 'Manajemen Informatika - Politeknik Negeri Malang',
-          bachelor: 'Fasilkom - Universitas Mercubuana'
+          bachelor: 'Computer Science - Universitas Mercubuana'
         },
         project: {
           one: 4,
@@ -192,17 +196,18 @@ export default {
           three: 5
         },
         skills: {
-          NodeJs_FeathersJs: { val: 75, color: 'info' },
-          VueJs: { val: 75, color: 'green' },
-          Quasar_Framework: { val: 75, color: 'warning' },
-          AngularJs: { val: 85, color: 'blue' },
-          ReactJs: { val: 50, color: 'green' },
-          CodeIgniter: { val: 80, color: 'primary' },
-          YII: { val: 50, color: 'yellow' },
-          CSS: { val: 70, color: 'secondary' },
-          GIT: { val: 75, color: 'red' }
+          NodeJs_FeathersJs: { val: 75, color: 'secondary' },
+          VueJs: { val: 75, color: 'secondary' },
+          Quasar_Framework: { val: 75, color: 'secondary' },
+          AngularJs: { val: 85, color: 'secondary' },
+          ReactJs: { val: 50, color: 'secondary' },
+          CodeIgniter: { val: 80, color: 'secondary' },
+          // YII: { val: 50, color: 'secondary' },
+          // CSS: { val: 70, color: 'secondary' },
+          GIT: { val: 75, color: 'secondary' }
         }
-      }
+      },
+      openURL
     }
   },
   filters: {
@@ -210,6 +215,11 @@ export default {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  },
+  methods: {
+    downloadCV () {
+      this.openURL('../downloads/indro-cv-march-2019.pdf')
     }
   }
 }
@@ -223,4 +233,5 @@ export default {
 .skillbar { margin-left: 10px; }
 .skilltitle { width: 150px; }
 .cardProject { width: 290px; margin: 0 10px 15px 0; }
+.q-list-header { color: #00deb3; border-bottom: solid 2px #00deb3; }
 </style>

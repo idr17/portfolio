@@ -26,8 +26,8 @@
 
     <q-layout-drawer
       v-model="leftDrawerOpen"
-      :content-class="$q.theme === 'mat' ? 'bg-grey-3' : null"
-      :content-style="{color: '#333'}"
+      :content-class="$q.theme === 'mat' ? 'bg-secondary' : null"
+      :content-style="{color: '#fff'}"
       >
       <q-list
         no-border
@@ -36,7 +36,7 @@
       >
         <q-item>
           <q-item-main style="text-align: center;">
-            <q-item-tile style="display: block;"><img alt="Quasar logo" src="~assets/rsz_me_and_my_lovely.jpg" style="border-radius: 100px; height: 150px;"></q-item-tile>
+            <q-item-tile style="display: block;"><img alt="Quasar logo" src="https://avatars1.githubusercontent.com/u/30069526?s=200&v=4" style="border-radius: 100px; height: 150px;"></q-item-tile>
             <q-item-tile style="display: block; font-weight: bold;">{{ creator.username }}</q-item-tile>
             <q-item-tile style="display: block;">{{ creator.progies }}</q-item-tile>
           </q-item-main>
@@ -45,19 +45,19 @@
         <q-item>
           <a name="about" href="#workingEksperience" class="links">
           <!-- <q-item-side icon="school" /> -->
-          <q-item-main label="Jobs" sublabel="Working Experience" />
+          <q-item-main label="Jobs" sublabel="Experience" />
           </a>
         </q-item>
         <q-item>
           <a name="about" href="#portfolio" class="links">
           <!-- <q-item-side icon="school" /> -->
-          <q-item-main label="Portfolio" sublabel="Last and Current Projects" />
+          <q-item-main label="Portfolio" sublabel="Projects" />
           </a>
         </q-item>
         <q-item>
           <a name="about" href="#about" class="links">
           <!-- <q-item-side icon="school" /> -->
-          <q-item-main label="About" sublabel="Personal Information & Contact" />
+          <q-item-main label="About" sublabel="Personal Information" />
           </a>
         </q-item>
       </q-list>
@@ -67,12 +67,9 @@
       <router-view />
     </q-page-container>
     <q-layout-footer class="no-shadow">
-      <q-toolbar color="grey">
-                <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
+      <q-toolbar color="secondary">
+        <q-btn flat dense
+          round @click="leftDrawerOpen = !leftDrawerOpen"
           aria-label="Menu"
         >
           <q-icon name="menu" />
@@ -113,6 +110,8 @@ export default {
 </script>
 
 <style scoped>
-a.links { text-decoration: none; margin-left: 40px; color: #333; }
+.q-layout-page-container { font-family: 'Raleway', sans-serif; }
+a.links { text-decoration: none; margin-left: 40px; color: #fff; }
+.q-item-sublabel { color: #fff !important; }
 span.externalSrc { cursor: pointer; }
 </style>

@@ -12,7 +12,7 @@
               side="left"
             >
               <div>
-                MGG is a software company founded by Steven Tan, which headquartered in Singapore. MGG's flagship product is Snaapp, school notification and attendance app. Snaapp widely used at schools in Singapore. I work here as Full Stack Javascript Programmer.
+                <i class="secondaryText">Full Stack Javascript Programmer</i> <br/>MGG is a software company founded by Steven Tan, which headquartered in Singapore. MGG's flagship product is Snaapp, school notification and attendance app. Snaapp widely used at schools in Singapore.
               </div>
             </q-timeline-entry>
             <q-timeline-entry
@@ -21,7 +21,7 @@
               side="right"
             >
               <div>
-                Write “clean”, well designed PHP Framework code, HTML, CSS, jQuery and AJAX. Produce detailed specifications. Troubleshoot, test and maintain the core product software and databases to ensure strong optimization and functionality. Contribute in all phases of the development lifecycle. Follow industry best practices. Develop and deploy new features to facilitate related procedures and tools if necessary. Implement staging development environment product.
+                <i class="secondaryText">Backend PHP Programmer</i> <br />Write “clean”, well designed PHP Framework code, HTML, CSS, jQuery and AJAX. Produce detailed specifications. Troubleshoot, test and maintain the core product software and databases to ensure strong optimization and functionality. Contribute in all phases of the development lifecycle. Follow industry best practices. Develop and deploy new features to facilitate related procedures and tools if necessary. Implement staging development environment product.
               </div>
             </q-timeline-entry>
             <q-timeline-entry
@@ -30,7 +30,7 @@
               side="left"
             >
               <div>
-                Production Maintenance Production Switch.<br /> Responsibilities to maintain and improve machine performance. include Programming Omron PLC. Establish production maintenance system whether emergency or preventive maintenance. Making schedule of maintenance activity. Coordinate with production side to implement maintenance activity & improvement. Controlling implementation of maintenance system. Controlling machine performance. Skillup subordinates. Ensure "Safety First" in all activity & machinery. Make downtime machinery report.
+                <i class="secondaryText">Production Maintenance Leader</i><br /> Responsibilities to maintain and improve machine performance. include Programming Omron PLC. Establish production maintenance system whether emergency or preventive maintenance. Making schedule of maintenance activity. Coordinate with production side to implement maintenance activity & improvement. Controlling implementation of maintenance system. Controlling machine performance. Skillup subordinates. Ensure "Safety First" in all activity & machinery. Make downtime machinery report.
               </div>
             </q-timeline-entry>
           </q-timeline>
@@ -41,7 +41,7 @@
       </q-list-header>
       <q-item>
         <q-item-main>
-          Here is some of them..
+          <p class="secondaryText">Here is some of them..</p>
         </q-item-main>
       </q-item>
       <q-item>
@@ -96,12 +96,11 @@
               Pixy Asian Beauty
               <q-rating slot="subtitle" v-model="content.project.three" :max="5" disable />
               <div slot="right" class="row items-center">
-                <!-- <q-icon name="place" /> 250 ft -->
               </div>
             </q-card-title>
             <q-card-main>
               <p>Pixy Commercial Campaign</p>
-              <p class="text-faded">Build with Php CI, Html, Css, jQuery, Facebook Auth, Twitter Auth</p>
+              <p class="text-faded">Build with Php CI, Html, Css, jQuery, Facebook Auth, Twitter OAuth</p>
             </q-card-main>
             <q-card-separator />
             <q-card-actions>
@@ -117,12 +116,51 @@
               SNAAPP
               <q-rating slot="subtitle" v-model="content.project.one" :max="5" disable />
               <div slot="right" class="row items-center">
-                <!-- <q-icon name="place" /> 250 ft -->
               </div>
             </q-card-title>
             <q-card-main>
               <p>School Notification and Attendance App</p>
               <p class="text-faded">Build with NodeJs, VueJs+Quasar Framework, AngularJs*</p>
+            </q-card-main>
+            <q-card-separator />
+            <q-card-actions>
+              <q-btn flat round dense icon="event" />
+              <q-btn flat label="Copyright 2018" />
+            </q-card-actions>
+          </q-card>
+          <q-card inline class="cardProject">
+            <q-card-media>
+              <img src="~assets/gettygoal.jpg">
+            </q-card-media>
+            <q-card-title>
+              GettyGoal
+              <q-rating slot="subtitle" v-model="content.project.one" :max="5" disable />
+              <div slot="right" class="row items-center">
+              </div>
+            </q-card-title>
+            <q-card-main>
+              <p>Football Portal</p>
+              <p class="text-faded">Build with CI, HTML, CSS, Javascript, Livescore API</p>
+            </q-card-main>
+            <q-card-separator />
+            <q-card-actions>
+              <q-btn flat round dense icon="event" />
+              <q-btn flat label="Copyright 2017" />
+            </q-card-actions>
+          </q-card>
+          <q-card inline class="cardProject">
+            <q-card-media>
+              <img src="~assets/samsung4g.jpg">
+            </q-card-media>
+            <q-card-title>
+              Samsung 4G
+              <q-rating slot="subtitle" v-model="content.project.two" :max="5" disable />
+              <div slot="right" class="row items-center">
+              </div>
+            </q-card-title>
+            <q-card-main>
+              <p>Gerakan mendukung 4G di Indonesia oleh Samsung</p>
+              <p class="text-faded">Build with CI, HTML, CSS, Javascript, Facebook Auth, Twitter Oauth</p>
             </q-card-main>
             <q-card-separator />
             <q-card-actions>
@@ -142,16 +180,18 @@
       </q-item>
       <q-item>
         <q-item-main>
-          <q-item v-for="(val, k) in content.basicInfo" :key="k">
-            <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
-            <q-item-main>{{ val | capitalize }}</q-item-main>
-          </q-item>
-        </q-item-main>
-        <q-item-main>
-          <q-item v-for="(val, k) in content.education" :key="k">
-            <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
-            <q-item-main>{{ val | capitalize }}</q-item-main>
-          </q-item>
+          <div class="divByTwo left">
+            <q-item v-for="(val, k) in content.basicInfo" :key="k">
+              <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
+              <q-item-main>{{ val | capitalize }}</q-item-main>
+            </q-item>
+          </div>
+          <div class="divByTwo">
+            <q-item v-for="(val, k) in content.education" :key="k">
+              <q-item-side>{{ k | capitalize }}</q-item-side><q-item-side />
+              <q-item-main>{{ val | capitalize }}</q-item-main>
+            </q-item>
+          </div>
         </q-item-main>
       </q-item>
       <q-list-header>
@@ -183,8 +223,7 @@ export default {
         aboutPage: 'Hi, i am a Software Engineer. My daily work as javascript programmer. Experienced in developing modern SPA web App and Hybrid websites. I am fast learner and loved new things in software development technologies that can solve our problem in better way.',
         basicInfo: {
           name: 'Indra Kurneamin',
-          age: '29 Years Old',
-          hobby: 'Coding, Football, Coffee'
+          age: '29'
         },
         education: {
           diploma: 'Manajemen Informatika - Politeknik Negeri Malang',
@@ -235,4 +274,10 @@ export default {
 .skilltitle { width: 150px; }
 .cardProject { width: 290px; margin: 0 10px 15px 0; }
 .q-list-header { color: #00deb3; border-bottom: solid 2px #00deb3; }
+.divByTwo { width: 40%; display: inline; }
+.left { float: left; }
+.secondaryText { color: #737373; }
+@media screen and (max-width: 400px) {
+  .divByTwo { width: 100%; display: block; }
+}
 </style>

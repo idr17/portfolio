@@ -241,9 +241,9 @@ export default {
           AngularJs: { val: 85, color: 'secondary' },
           ReactJs: { val: 50, color: 'secondary' },
           CodeIgniter: { val: 80, color: 'secondary' },
-          // YII: { val: 50, color: 'secondary' },
+          GIT: { val: 75, color: 'secondary' },
+          PLC_Omron: { val: 50, color: 'secondary' }
           // CSS: { val: 70, color: 'secondary' },
-          GIT: { val: 75, color: 'secondary' }
         }
       },
       openURL
